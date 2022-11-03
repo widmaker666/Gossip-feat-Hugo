@@ -1,0 +1,23 @@
+<div class="container-fluid my-5">
+	<h3><%= @gossip.title %></h3>
+<button><%= link_to "Edite ton sacrament de potin", edit_gossip_path %></button>
+<%= link_to "Supprimer le Gossip", gossip_path, method: :delete, class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+</div>
+
+<div class="card align-self-center mt-2" style="width: 100rem;">
+    <div class="card-body">
+    <h5 class="card-title"><%= link_to "#{@gossip.user.first_name}", "/user/#{@gossip.user.id}" %></h5>
+    <p class="card-text"><%= @gossip.content %></p>
+</div>
+<br>
+<br>
+<% @comment.each do |comment| %>
+<div class="card align-self-center my-2" style="width: 100rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to "#{comment.content}", "/gossips/#{@gossip.id}" %> </h5>    
+	<ul> <%= comment.created_at %> </ul>
+
+</div>
+</div>
+
+<% end %>

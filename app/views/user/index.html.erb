@@ -1,9 +1,9 @@
 <section class="jumbotron text-center">
         <div class="container my-5">
-        <h1 class="jumbotron-heading">The Gossip Project</h1>
-        <p class="lead text-muted">Franchement, on avait tous besoin d'un site pour echanger les rumeurs non ?</p>
+        <h1 class="jumbotron-heading">Les Calices De Potins</h1>
+        <p class="lead text-muted">Tu veux voir les tabarnak de potins de fif de calice ?</p>
         <p>
-            <a href="/gossip" class="btn btn-primary my-2">Découvre tous les gossip !</a>
+            <a href="/gossips" class="btn btn-primary my-2">Ici c'est marde des potins!</a>
             
         </p>
         </div>
@@ -25,9 +25,9 @@
 
 				
             <% @user[index].gossips.each do |gossip| %>
-			    <%= link_to "#{gossip.title}", "/gossip/#{gossip.id}" %>
-										<% end %>
-										</div>
-									</div>
+			    <%= link_to "#{gossip.title}", "/gossips/#{gossip.id}" %>
+			<% end %>
+			</div>
+			</div>
 
-<% end %
+<% end %>
